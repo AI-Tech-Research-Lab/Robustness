@@ -6,7 +6,8 @@ import os
 import argparse
 import sys
 
-sys.path.append(os.getcwd())
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(script_dir)
 
 import numpy as np
 from ofa_evaluator import OFAEvaluator
@@ -17,7 +18,7 @@ import torchvision.models
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 from torch.utils.data import DataLoader
-from robustness.utility.corruptions import ApplyDistortion
+from utility.corruptions import ApplyDistortion
 import torch.nn as nn
 import torch.optim as optim
 from train_utils import load_checkpoint, train, validate
